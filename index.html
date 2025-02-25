@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skan Hous - Atendimento</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
 </head>
 <body class="h-screen w-screen flex flex-col items-center justify-center overflow-hidden relative">
     
@@ -17,7 +17,7 @@
     </div>
     
     <!-- Carrossel de Imagens -->
-    <div class="w-full h-full slider">
+    <div class="w-full h-screen slider">
         <div><img src="/hero_01.png" alt="Casa 1" class="w-full h-full object-cover"></div>
         <div><img src="/hero_02.png" alt="Casa 2" class="w-full h-full object-cover"></div>
         <div><img src="/hero_03.png" alt="Casa 3" class="w-full h-full object-cover"></div>
@@ -28,16 +28,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script>
         $(document).ready(function(){
-            $('.slider').slick({
-                autoplay: true,
-                autoplaySpeed: 3000,
-                dots: true,
-                arrows: false,
-                infinite: true,
-                speed: 500,
-                fade: true,
-                cssEase: 'linear'
-            });
+            console.log("Iniciando Slick...");
+            if ($('.slider').length) {
+                $('.slider').slick({
+                    autoplay: true,
+                    autoplaySpeed: 3000,
+                    dots: true,
+                    arrows: false,
+                    infinite: true,
+                    speed: 500,
+                    fade: true,
+                    cssEase: 'linear'
+                });
+            } else {
+                console.error("Elemento '.slider' não encontrado.");
+            }
         });
     </script>
     
